@@ -25,6 +25,8 @@ class MyHandler(FileSystemEventHandler):
                 new_dest = folder_img + '/' + filename
             elif filename.endswith('.zip'):
                 new_dest = folder_zip + '/' + filename
+            elif filename.endswith('.txt'):
+                new_dest = folder_text + '/' + filename
             else:
                 new_dest = folder_unkown + '/' + filename
 
@@ -36,6 +38,7 @@ folder_exe = "E:\\downloads organized\\exe"
 folder_img = "E:\\downloads organized\\images"
 folder_zip = "E:\\downloads organized\\zips"
 folder_unkown = "E:\\downloads organized\\unkown"
+folder_text = "E:\\downloads organized\\texts"
 event_handler = MyHandler()
 observer = Observer()
 observer.schedule(event_handler, folder_to_track, recursive=True)
